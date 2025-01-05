@@ -9,7 +9,7 @@ const Explore = () => {
     function generateRandomPalette() {
         const palette = [];
         const categories = Object.keys(colors);
-        for (let i = 0; i < 6; i++) {
+        for (let i = 0; i < 8; i++) {
             const category = categories[Math.floor(Math.random() * categories.length)];
             const shades = Object.keys(colors[category]);
             const shade = shades[Math.floor(Math.random() * shades.length)];

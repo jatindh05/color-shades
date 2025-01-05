@@ -40,7 +40,7 @@ const ColorBox = ({ shades, background, name, shadeNames, category }) => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center w-full h-36 lg:max-3xl:h-full transition-transform transform hover:scale-105 rounded-lg overflow-hidden">
+        <div className="flex flex-col items-center justify-center  w-full h-36 lg:max-3xl:h-full ">
             <div>
                 <Toaster />
             </div>
@@ -55,15 +55,15 @@ const ColorBox = ({ shades, background, name, shadeNames, category }) => {
                                 setCurrentName(`${category} ${shadeNames[index]}`);
                                 setShowAllShades(!showAllShades);
                             }}
-                            className="z-50 w-full h-full lg:max-3xl:h-1/6 flex justify-center items-center cursor-pointer transition-all duration-300"
+                            className="z-50 w-full h-full lg:max-3xl:h-1/6 flex justify-center items-center cursor-pointer"
                             style={{ backgroundColor: shade }}
                         >
                             {currentColor === shade ? (
-                                <p className="font-semibold lg:max-3xl:block hidden text-md text-white">
+                                <p className=" font-semibold lg:max-3xl:block hidden text-md">
                                     Current Color
                                 </p>
                             ) : (
-                                    <p className="lg:max-3xl:block hidden text-md text-white">
+                                <p className=" lg:max-3xl:block hidden text-md">
                                     {shade}
                                 </p>
                             )}
@@ -75,21 +75,21 @@ const ColorBox = ({ shades, background, name, shadeNames, category }) => {
                     className="flex flex-col items-center justify-around w-full h-full group"
                     style={{ backgroundColor: currentColor }}
                 >
-                        <div className="flex lg:max-3xl:flex-col gap-5 group-hover:visible invisible transition-all">
+                    <div className="flex lg:max-3xl:flex-col gap-5 group-hover:visible invisible transition-all">
                         <IoGridSharp
-                                className="text-2xl text-white cursor-pointer"
+                            className="text-2xl"
                             onClick={handleShowAllShades}
                         />
                         <FaCopy
-                                className="text-xl text-white cursor-pointer"
+                            className="text-xl"
                             onClick={() => {
                                 handleColorClick(currentColor);
                             }}
                         />
 
                         {
-                                favColors ? (<FaHeart className="text-xl text-red-500 cursor-pointer" />) : (<FaRegHeart
-                                    className="text-xl text-white cursor-pointer"
+                            favColors ? (<FaHeart className="text-xl cursor-pointer" />) : (<FaRegHeart
+                                className="text-xl cursor-pointer"
                                 onClick={() => {
                                     favClickHandler();
                                 }}
@@ -100,10 +100,10 @@ const ColorBox = ({ shades, background, name, shadeNames, category }) => {
 
                     </div>
                     <div className="flex flex-col justify-center items-center">
-                        <h3 className="lg:max-3xl:block hidden font-semibold text-2xl text-white">
+                        <h3 className="lg:max-3xl:block hidden font-semibold text-2xl">
                             {currentColor}
                         </h3>
-                        <p className="lg:max-3xl:block hidden text-md text-white">
+                        <p className="lg:max-3xl:block hidden text-md">
                             {currentName}
                         </p>
                     </div>
